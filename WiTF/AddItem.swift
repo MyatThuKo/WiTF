@@ -17,6 +17,9 @@ struct AddItem: View {
     @State private var hasExpiration = false
     @State private var expirationDate = Date()
     
+    @State private var showAlert = false
+    @State private var alertMessage = ""
+    
     let listInto =  ["Fridge", "Shopping Cart"]
     @State private var selectedList = 0
     
@@ -50,6 +53,18 @@ struct AddItem: View {
                 
                 Section {
                     Button("Save") {
+                        guard !self.name.isEmpty else {
+                            self.alertMessage = "Please input the name."
+                            self.showAlert.toggle()
+                            return
+                        }
+                        
+                        guard !self.amount.isEmpty else {
+                            self.alertMessage = "Please input the amount."
+                            self.showAlert.toggle()
+                            return
+                        }
+                        
                         if self.selectedList == 0 {
                             let newGrocery = Grocery(context: self.moc)
                             newGrocery.name = self.name
@@ -73,6 +88,9 @@ struct AddItem: View {
                 }
             }
             .navigationBarTitle("Add new item", displayMode: .inline)
+            .alert(isPresented: $showAlert) {
+                Alert(title: Text("Invalid Input"), message: Text(self.alertMessage), dismissButton: .default(Text("Ok")))
+            }
         }
     }
 }
