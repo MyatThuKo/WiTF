@@ -39,7 +39,7 @@ struct ContentView: View {
                     
                     Spacer()
                     
-                    NavigationLink(destination: Text("Shopping Cart")) {
+                    NavigationLink(destination: ShoppingListView()) {
                         HStack {
                             Image(systemName: "cart")
                                 .font(.title)

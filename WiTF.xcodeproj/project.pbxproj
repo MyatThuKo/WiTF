@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E2622F6824996685008BE669 /* ShoppingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2622F6724996685008BE669 /* ShoppingListView.swift */; };
 		E2DF522E24983CB100AEF406 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DF522D24983CB100AEF406 /* AppDelegate.swift */; };
 		E2DF523024983CB100AEF406 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DF522F24983CB100AEF406 /* SceneDelegate.swift */; };
 		E2DF523324983CB100AEF406 /* WiTF.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E2DF523124983CB100AEF406 /* WiTF.xcdatamodeld */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E2622F6724996685008BE669 /* ShoppingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListView.swift; sourceTree = "<group>"; };
 		E2DF522A24983CB100AEF406 /* WiTF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WiTF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2DF522D24983CB100AEF406 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2DF522F24983CB100AEF406 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				E2DF524424983CE000AEF406 /* AddItem.swift */,
 				E2DF524624983F9300AEF406 /* ListView.swift */,
 				E2DF52482498419300AEF406 /* ItemDetailView.swift */,
+				E2622F6724996685008BE669 /* ShoppingListView.swift */,
 				E2DF523424983CB100AEF406 /* ContentView.swift */,
 				E2DF523624983CB200AEF406 /* Assets.xcassets */,
 				E2DF523B24983CB200AEF406 /* LaunchScreen.storyboard */,
@@ -158,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2622F6824996685008BE669 /* ShoppingListView.swift in Sources */,
 				E2DF523324983CB100AEF406 /* WiTF.xcdatamodeld in Sources */,
 				E2DF522E24983CB100AEF406 /* AppDelegate.swift in Sources */,
 				E2DF52492498419300AEF406 /* ItemDetailView.swift in Sources */,

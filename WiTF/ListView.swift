@@ -30,14 +30,11 @@ struct ListView: View {
                         VStack(alignment: .leading) {
                             Text(item.name ?? "Unknown Item")
                                 .font(.headline)
-                            
-                            HStack {
-                                Text("Amount: \(item.amount)")
+                            Text("Amount: \(item.amount, specifier:"%g")")
+                                .foregroundColor(.secondary)
+                            if item.hasExpiration == true {
+                                Text("Expires on: \(item.expirationDate!, formatter: Self.taskDateFormat)")
                                     .foregroundColor(.secondary)
-                                if item.hasExpiration == true {
-                                    Text("Expires on: \(item.expirationDate!, formatter: Self.taskDateFormat)")
-                                        .foregroundColor(.secondary)
-                                }
                             }
                         }
                     }

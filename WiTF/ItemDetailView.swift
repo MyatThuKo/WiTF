@@ -58,7 +58,7 @@ struct ItemDetailView: View {
                 }
                 
                 HStack {
-                    Text("Amount: \(self.groceryItem.amount )" )
+                    Text("Amount: \(self.groceryItem.amount, specifier:"%g")")
                     Button(action: {
                         self.plusAngle += 180
                         self.groceryItem.amount += 1
@@ -108,16 +108,6 @@ struct ItemDetailView: View {
                 HStack {
                     Text("Delete")
                     Image(systemName: "trash")
-                }
-            }
-            
-            // Add Shopping Cart Button
-            Button(action: {
-                // add shopping list
-            }) {
-                HStack {
-                    Text("Add")
-                    Image(systemName: "cart")
                 }
             }
         })
