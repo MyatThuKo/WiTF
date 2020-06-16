@@ -66,10 +66,10 @@
 			children = (
 				E2DF522D24983CB100AEF406 /* AppDelegate.swift */,
 				E2DF522F24983CB100AEF406 /* SceneDelegate.swift */,
-				E2DF523424983CB100AEF406 /* ContentView.swift */,
 				E2DF524424983CE000AEF406 /* AddItem.swift */,
 				E2DF524624983F9300AEF406 /* ListView.swift */,
 				E2DF52482498419300AEF406 /* ItemDetailView.swift */,
+				E2DF523424983CB100AEF406 /* ContentView.swift */,
 				E2DF523624983CB200AEF406 /* Assets.xcassets */,
 				E2DF523B24983CB200AEF406 /* LaunchScreen.storyboard */,
 				E2DF523E24983CB200AEF406 /* Info.plist */,
