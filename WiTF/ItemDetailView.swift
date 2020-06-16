@@ -22,12 +22,15 @@ struct ItemDetailView: View {
     @State private var plusAngle = 0.0
     @State private var minusAngle = 0.0
     
-    // To display Date in a TextView 
-    static let taskDateFormat: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .long
-        return formatter
-    }()
+    var formattedDate: String {
+        if let date = self.groceryItem.expirationDate {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .long
+            return formatter.string(from: date)
+        } else {
+            return "N/A"
+        }
+    }
     
     var body: some View {
         ZStack {
@@ -42,7 +45,7 @@ struct ItemDetailView: View {
                 Spacer()
                 
                 if groceryItem.hasExpiration == true {
-                    Text("Expires on: \(groceryItem.expirationDate!, formatter: Self.taskDateFormat)")
+                    Text("Expires on: \(self.formattedDate)")
                         .foregroundColor(.white)
                         .fontWeight(.semibold)
                         .font(.headline)
