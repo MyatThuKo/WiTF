@@ -24,6 +24,9 @@ struct TextView: View {
 }
 
 struct ContentView: View {
+    @Environment(\.managedObjectContext) var moc
+    @State private var showAddSheet = false
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -55,9 +58,24 @@ struct ContentView: View {
                     }
                     
                     Spacer()
+                    
+                    Button(action: {
+                        self.showAddSheet.toggle()
+                    }) {
+                        Image(systemName: "plus")
+                            .foregroundColor(.white)
+                            .font(.title)
+                            .padding()
+                            .background(LinearGradient(gradient: Gradient(colors: [.yellow, .orange]), startPoint: .leading, endPoint: .trailing))
+                            .cornerRadius(40)
+                        
+                    }
                 }
             }
             .navigationBarTitle("What's in the Fridge?")
+            .sheet(isPresented: $showAddSheet) {
+                AddItem().environment(\.managedObjectContext, self.moc)
+            }
         }
     }
 }
