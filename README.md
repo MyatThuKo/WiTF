@@ -6,14 +6,23 @@ This app can
 <li> add grocery items into the list </li> 
 <li> increase or decrease the number of each item </li> 
 <li> delete item when no item left </li> 
-<li> add items to shopping cart (Coming in future) </li> 
+<li> add items to shopping cart </li> 
+<li> help user find the nearest supermarket depending on location using GetLocation (Future Update) </li> 
 </ol>
 <h3><b> Languages used: SwiftUI and Core Data </b></h3>
 Check out <a href="https://twitter.com/twostraws" target="_blank"> Paul Hudson's </a>
 <a href="https://www.hackingwithswift.com/100/swiftui" target="_blank"> 100 Days of SwiftUI </a> and 
 <a href="https://www.hackingwithswift.com/" target="_blank"> Hacking with Swift </a> 
 for more! 
-<br><br><br> 
-App Demo: <br> 
-<img src="ScreenRecordings/PartOne.gif" width="250">
+<br>
+<div>
+<b> Items in Fridge View and Shopping Cart View </b> <br><br>
+<img src="ScreenRecordings/ItemsInFridge.gif" width="250">
+<img src="ScreenRecordings/ShoppingCart.gif" width="250">
+</div>
+<div> 
+  <b> Adding New Items and Validation on inputs </b><br><br> 
+<img src="ScreenRecordings/AddNewItem.gif" width="250">
+<img src="ScreenRecordings/Validation.gif" width="250">
+</div>
 </p>
