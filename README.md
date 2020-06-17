@@ -14,14 +14,15 @@ Check out <a href="https://twitter.com/twostraws" target="_blank"> Paul Hudson's
 <a href="https://www.hackingwithswift.com/100/swiftui" target="_blank"> 100 Days of SwiftUI </a> and 
 <a href="https://www.hackingwithswift.com/" target="_blank"> Hacking with Swift </a> 
 for more! 
-<br>
+</b><br><br> 
 <div>
-<b> Items in Fridge View and Shopping Cart View </b> <br><br>
+<b> Items in Fridge View and Shopping Cart View </b>
 <img src="ScreenRecordings/ItemsInFridge.gif" width="250">
 <img src="ScreenRecordings/ShoppingCart.gif" width="250">
 </div>
+</b><br>
 <div> 
-  <b> Adding New Items and Validation on inputs </b><br><br> 
+<b> Adding New Items and Validation on inputs </b>
 <img src="ScreenRecordings/AddNewItem.gif" width="250">
 <img src="ScreenRecordings/Validation.gif" width="250">
 </div>
