@@ -20,6 +20,8 @@ struct AddItem: View {
     @State private var showAlert = false
     @State private var alertMessage = ""
     
+    @State private var unit = ""
+    
     let listInto =  ["Fridge", "Shopping Cart"]
     @State private var selectedList = 0
     
@@ -31,6 +33,8 @@ struct AddItem: View {
                     
                     TextField("Amount", text: $amount)
                         .keyboardType(.decimalPad)
+                    
+                    TextField("Unit", text: $unit)
                     
                     Picker("Add Into: ", selection: $selectedList) {
                         ForEach(0..<listInto.count, id: \.self) {
@@ -71,6 +75,7 @@ struct AddItem: View {
                             newGrocery.amount = Double(self.amount) ?? 0
                             newGrocery.hasExpiration = self.hasExpiration
                             newGrocery.expirationDate = self.expirationDate
+                            newGrocery.unit = self.unit
                             
                             try? self.moc.save()
                         } else {
@@ -79,6 +84,7 @@ struct AddItem: View {
                             item.amount = Double(self.amount) ?? 0
                             item.expirationDate = self.expirationDate
                             item.hasExpiration = self.hasExpiration
+                            item.unit = self.unit
                             
                             try? self.moc.save()
                         }

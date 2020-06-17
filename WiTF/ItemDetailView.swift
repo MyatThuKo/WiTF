@@ -58,7 +58,7 @@ struct ItemDetailView: View {
                 }
                 
                 HStack {
-                    Text("Amount: \(self.groceryItem.amount, specifier:"%g")")
+                    Text("Amount: \(self.groceryItem.amount, specifier:"%g") \(self.groceryItem.unit ?? "N/A")")
                     Button(action: {
                         self.plusAngle += 180
                         self.groceryItem.amount += 1

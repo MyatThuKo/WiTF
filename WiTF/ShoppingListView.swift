@@ -21,7 +21,7 @@ struct ShoppingListView: View {
                     VStack(alignment: .leading) {
                         Text("\(item.name ?? "Unknown Item")")
                         
-                        Text("Amount: \(item.amount, specifier: "%g")")
+                        Text("Amount: \(item.amount, specifier: "%g") \(item.unit ?? "N/A")")
                             .foregroundColor(.secondary)
                     }
                 }
