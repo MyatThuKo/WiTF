@@ -16,13 +16,13 @@ Check out <a href="https://twitter.com/twostraws" target="_blank"> Paul Hudson's
 for more! 
 </b><br><br> 
 <div>
-<b> Items in Fridge View and Shopping Cart View </b>
+<b> Items in Fridge View and Shopping Cart View </b> <br>
 <img src="ScreenRecordings/ItemsInFridge.gif" width="250">
 <img src="ScreenRecordings/ShoppingCart.gif" width="250">
 </div>
 </b><br>
 <div> 
-<b> Adding New Items and Validation on inputs </b>
+<b> Adding New Items and Validation on inputs </b> <br>
 <img src="ScreenRecordings/AddNewItem.gif" width="250">
 <img src="ScreenRecordings/Validation.gif" width="250">
 </div>
