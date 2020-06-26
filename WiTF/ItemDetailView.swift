@@ -22,6 +22,8 @@ struct ItemDetailView: View {
     @State private var plusAngle = 0.0
     @State private var minusAngle = 0.0
     
+    @State private var amount = ""
+    
     var formattedDate: String {
         if let date = self.groceryItem.expirationDate {
             let formatter = DateFormatter()
@@ -57,41 +59,54 @@ struct ItemDetailView: View {
                     Spacer()
                 }
                 
-                HStack {
-                    Text("Amount: \(self.groceryItem.amount, specifier:"%g") \(self.groceryItem.unit ?? "N/A")")
-                    Button(action: {
-                        self.plusAngle += 180
-                        self.groceryItem.amount += 1
-                        try? self.moc.save()
-                    }) {
-                        Image(systemName: "plus.circle.fill")
-                            .font(.system(size: 50))
-                            .clipShape(Circle())
-                            .animation(Animation.linear.repeatForever(autoreverses: false))
-                            .foregroundColor(.red)
-                    }
-                    .rotation3DEffect(.degrees(plusAngle), axis: (x: 0, y: 1, z: 0))
-                    .animation(.easeIn)
+                VStack {
+                    TextField("Amount Changed", text: $amount)
+                        .keyboardType(.decimalPad)
+                        .foregroundColor(.white)
+                        .multilineTextAlignment(.center)
+                        .padding()
+                        .frame(width: 200, height: 50)
+                        .background(LinearGradient(gradient: Gradient(colors: [.yellow, .orange]), startPoint: .leading, endPoint: .trailing))
+                        .cornerRadius(40)
                     
-                    Button(action: {
-                        self.minusAngle += 180
-                        if self.groceryItem.amount > 0 {
-                            self.groceryItem.amount -= 1
+                    HStack {
+                        Text("Amount: \(self.groceryItem.amount, specifier:"%g") \(self.groceryItem.unit ?? "N/A")")
+                        Button(action: {
+                            self.plusAngle += 180
+                            self.groceryItem.amount += Double(self.amount) ?? 0.0
+                            self.amount = ""
                             try? self.moc.save()
-                        } else {
-                            self.showDeleteAlert = true
-                            self.alertTitle = "Finished Item?"
-                            self.alertMessage = "Item will be removed!"
+                        }) {
+                            Image(systemName: "plus.circle.fill")
+                                .font(.system(size: 50))
+                                .clipShape(Circle())
+                                .animation(Animation.linear.repeatForever(autoreverses: false))
+                                .foregroundColor(.red)
                         }
-                    }) {
-                        Image(systemName: "minus.circle.fill")
-                            .font(.system(size: 50))
-                            .clipShape(Circle())
-                            .animation(Animation.linear.repeatForever(autoreverses: false))
-                            .foregroundColor(.red)
+                        .rotation3DEffect(.degrees(plusAngle), axis: (x: 0, y: 1, z: 0))
+                        .animation(.easeIn)
+                        
+                        Button(action: {
+                            self.minusAngle += 180
+                            if self.groceryItem.amount > 0 {
+                                self.groceryItem.amount -= Double(self.amount) ?? 0.0
+                                self.amount = ""
+                                try? self.moc.save()
+                            } else {
+                                self.showDeleteAlert = true
+                                self.alertTitle = "Finished Item?"
+                                self.alertMessage = "Item will be removed!"
+                            }
+                        }) {
+                            Image(systemName: "minus.circle.fill")
+                                .font(.system(size: 50))
+                                .clipShape(Circle())
+                                .animation(Animation.linear.repeatForever(autoreverses: false))
+                                .foregroundColor(.red)
+                        }
+                        .rotation3DEffect(.degrees(minusAngle), axis: (x: 0, y: 1, z: 0))
+                        .animation(.easeIn)
                     }
-                    .rotation3DEffect(.degrees(minusAngle), axis: (x: 0, y: 1, z: 0))
-                    .animation(.easeIn)
                 }
             }
             
